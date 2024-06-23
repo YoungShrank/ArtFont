@@ -1,2 +1,2 @@
 # ArtFont
-utils required when build a artistic glyph dataset   
+utils required when building a artistic glyph dataset   
