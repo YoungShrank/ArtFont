@@ -1,6 +1,13 @@
 from PIL import Image, ImageDraw, ImageFont
+from PIL.ImageFont import FreeTypeFont
 from fontTools.ttLib import TTFont
-def render(font:ImageFont,char:str,shape=(128,128),padding = 16):
+
+def load_font(path:str,size = 96):
+    """
+    load FreeTypeFont from path
+    """
+    return ImageFont.truetype(path,size)
+def render(font:FreeTypeFont,char:str,shape=(128,128),padding = 16):
     """
     根据字体渲染字符字形图
     - font: 字体
@@ -41,7 +48,7 @@ def supported_chars(ttf_path,encodings=((3,10),(3,1))):
                             ch=int(byt).to_bytes(length=2,byteorder='big', signed=False).decode(cmap_encoding)
                             if len(ch)<2: chars.add(ch)
                         except :
-                            print(byt)
+                            #print(byt)
                             continue
     return chars
 
@@ -51,4 +58,6 @@ if __name__ == "__main__":
     import os
     ttf_path  = os.path.join("ttfdemo","SourceHanSans-Heavy Bold Font(Google apple free open-source font)-Simplified Chinese-Traditional Chinese.otf")
     chars = " ".join(supported_chars(ttf_path))
+    font = load_font(ttf_path, 96)
+    render(font,"A").save("A.png")
     #print(chars)

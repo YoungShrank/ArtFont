@@ -12,6 +12,18 @@ utils required when building a artistic glyph dataset,including fontglyph render
 
 ## usage
 
+### fontglyph rendering
+
+### fonts filter
+
+### visualization
+
+### generate meta data
+
+
+### build artistic glyph dataset
+
+
 
 ## jargons
 1. **font**: a font is a collection of glyphs, each of which represents a character.
@@ -26,3 +38,11 @@ utils required when building a artistic glyph dataset,including fontglyph render
 ## reference
 
 https://zi-hi.com/
+
+## requirements
+| 依赖项 | 说明 |
+| --- | --- |
+| python | 3.8.0 |
+| numpy | 1.19.2 |
+| PIL | 8.2.0 |
+| opencv-python | 4.5.1.48 |
