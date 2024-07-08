@@ -10,6 +10,22 @@ utils required when building a artistic glyph dataset,including fontglyph render
 | meta data |(scale) -> (meta data) |
 | artistic glyph  | (font glyph,texture image) -> (artistic glyph) |
 
+## flow
+1. get the supported chars
+    1.  build a raw dataset 
+    2.  sample and view the images,choose the faults
+    3.  collect the faults
+    4.  filter the faults in ttf files and get the supported chars
+2. filter invalid fonts
+    1.  build a raw dataset
+    2.  sample and view the images,record the invalid fonts
+    3.  filter the invalid fonts
+3. generate meta data
+    1. build a map of name to path of font or color 
+    2. use the meta module to generate meta data
+4. build a artistic glyph dataset
+    1. build a dataset using the synthesis module according to the meta data
+
 ## usage
 
 ### fontglyph rendering
@@ -42,7 +58,7 @@ https://zi-hi.com/
 ## requirements
 | 依赖项 | 说明 |
 | --- | --- |
-| python | 3.8.0 |
-| numpy | 1.19.2 |
-| PIL | 8.2.0 |
-| opencv-python | 4.5.1.48 |
+| python | the programming language |
+| numpy |  image processing|
+| PIL | image load and processing |
+| fontTools | font file parsing |
